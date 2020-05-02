@@ -4,6 +4,9 @@ set -euo pipefail
 # see https://github.com/daid/EmptyEpsilon/wiki/Headless-Dedicated-Server
 
 EE_VERSION="2020.03.22"
+if test \$# -ge 1; then
+  EE_VERSION="$1"
+fi
 EE_URL="https://github.com/daid/EmptyEpsilon/releases/download/EE-$EE_VERSION/Linux_EmptyEpsilon_EE-$EE_VERSION.deb"
 # EE_URL="https://github.com/daid/EmptyEpsilon/releases/download/EE-$EE_VERSION/Native_EmptyEpsilon_EE-$EE_VERSION.deb"
 SFML_VERSION="2.4.0"
