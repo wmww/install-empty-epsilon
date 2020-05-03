@@ -15,6 +15,11 @@ SFML_URL="https://www.sfml-dev.org/files/SFML-$SFML_VERSION-linux-gcc-64-bit.tar
 BIN_DIR="/usr/bin"
 EE_HEADLESS_BIN="EmptyEpsilonHeadless"
 EE_NORMAL_BIN="EmptyEpsilonGraphical"
+DESKTOP_FILES_DIR="/usr/share/applications"
+ICONS_DIR="/usr/share/pixmaps"
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+DESKTOP_FILE="$SCRIPT_DIR/empty-epsilon.desktop"
+ICON_FILE="$SCRIPT_DIR/empty-epsilon.png"
 rm -Rf ./ee
 mkdir ee
 wget -P ee "$SFML_URL"
@@ -66,6 +71,11 @@ EmptyEpsilon "\$@"
 " | sudo tee "$BIN_DIR/$EE_NORMAL_BIN" > /dev/null
 
 sudo chmod +x "$BIN_DIR/$EE_NORMAL_BIN"
+
+if test -d "$DESKTOP_FILES_DIR"; then
+    sudo cp "$DESKTOP_FILE" "$DESKTOP_FILES_DIR"
+    sudo cp "$ICON_FILE" "$ICONS_DIR"
+fi
 
 echo
 echo "Looks like everything's set up! You can $EE_HEADLESS_BIN or $EE_NORMAL_BIN"

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Empty Epsilon
+Comment=Bridge simulator game
+Exec=EmptyEpsilonGraphical
+Icon=empty-epsilon
+Terminal=false
+Type=Application
+StartupNotify=true
+Actions=run-headless;
+
+[Desktop Action run-headless]
+Name=Home
+Exec=EmptyEpsilonHeadless
