@@ -3,7 +3,7 @@ set -euo pipefail
 
 # see https://github.com/daid/EmptyEpsilon/wiki/Headless-Dedicated-Server
 
-EE_VERSION="2020.03.22"
+EE_VERSION="2020.04.09"
 if test \$# -ge 1; then
   EE_VERSION="$1"
 fi
